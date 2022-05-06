@@ -1,0 +1,25 @@
+MOUNT
+CREATE	file_fs
+CREATE  file2_fs
+CREATE  file3_fs
+DELETE  file2_fs
+OPEN	file_fs
+WRITE	DATA	00000
+CLOSE
+OPEN    file3_fs
+SEEK	0
+WRITE	DATA	abcde
+CLOSE
+CREATE  file2_fs
+OPEN    file2_fs
+WRITE	DATA	abcde
+READ	5	DATA	abcde
+SEEK	5
+WRITE	DATA    lolol
+SEEK	0
+READ	7	DATA	abcdelo
+CLOSE
+DELETE	file2_fs
+DELETE  file3_fs
+DELETE  file_fs
+UMOUNT
